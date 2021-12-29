@@ -1,0 +1,57 @@
+
+    
+*, *::before, *::after
+    font-family: 'Poppins', sans-serif
+    margin: 0
+    box-sizing: border-box
+
+%medidas_botao
+    
+    border-radius: 1.625rem
+
+body
+    display: grid
+    align-items: center
+    justify-content: center
+    background-color: rgb(245, 219, 219)
+    min-width: 100vw
+    min-height: 100vh
+
+.container
+    width: fit-content
+    height: fit-content
+    
+
+.button-return
+    @extend  %medidas_botao
+    border: solid 1px rgba(0, 0, 0, 1) !important
+    padding: 0
+    position: relative
+    font-size: 22px
+    background-color: white
+    height: 50px
+    width: 150px
+    z-index: 1
+    overflow: hidden
+    transition: all .5s
+    &::after
+        @extend %medidas_botao
+        content: url('./arrow-left.png')
+        display: flex
+        align-items: flex-end
+        justify-content: center
+        width: 100%
+        height: 100%
+        background-color: #6a80fc
+        position: absolute
+        right: -105%
+        top: 0
+        z-index: 500  
+        transition: all .5s
+    &:hover
+   
+        &::after
+                right: 0%
+                top: 0%
+
+    
